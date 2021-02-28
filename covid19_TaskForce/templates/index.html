@@ -1,13 +1,61 @@
+{%load static%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{%static './style.css' %}">
+    <title>Covid19 - Task Force</title>
 </head>
 <body>
-    welcome to first page
-    
+    <div class="main-site">
+        <div class="navigation">
+            <nav class="main-nav sticky-top">
+                <a href="#">
+                  <img src="{%static 'logo.png'%}" width="30" height="30" class="d-inline-block align-top logo" alt="""><p id = "title1">Covid19 - Task Force</p></img>
+                </a>
+                <p id="Signout1"><u><a href="login"> Sign Out</a></u></p>
+              </nav>
+        </div>   
+        
+          
+             
+
+
+        <div class="card text-center main-card">
+            <h2><b>Welcome {{user.first_name}} !</b></h2>
+            <div class="card-header">
+                <h2 id="titlee">Enter the following details :</h2>
+            </div>
+            <div class="card-body">
+              <form action="output" method="GET">
+                  
+                  <p>Current number of students (total):
+                    <input type="text" name = "total"/>  <!--<button class="autode">Auto-Detect</button>---> 
+                  </p>
+                  <p>Number of students in quarantine:
+                    <input type="text" name = "noofquarantine"/>
+                  </p>
+                  <p>Number of students in college(after quarantine):
+                    <input type="text" name ="nonq"/>
+                  </p>
+                  <p>Number of vacant quarantine rooms:
+                    <input type="text" name ="room"/>
+                  </p>
+                  <p>Number of days of quarantine:
+                    <input type="text" name ="qt"/>
+                  </p>
+                  <button type="submit" class="btn btn-primary Sumit" >Submit</button>
+              </form>
+
+
+              
+            </div>
+          </div>
+        
+    </div>
+
 </body>
 </html>
