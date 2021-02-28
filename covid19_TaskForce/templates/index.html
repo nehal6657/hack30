@@ -33,20 +33,26 @@
               <form action="output" method="GET">
                   
                   <p>Current number of students (total):
-                    <input type="text" name = "total"/>  <!--<button class="autode">Auto-Detect</button>---> 
+                    <input type="number" name = "total"/>  <!--<button class="autode">Auto-Detect</button>---> 
                   </p>
+                  
+                  <p>Starting date:
+                    <input type="date" name = "startdate"/>
+                  </p>
+
                   <p>Number of students in quarantine:
-                    <input type="text" name = "noofquarantine"/>
+                    <input type="number" name = "noofquarantine"/>
                   </p>
                   <p>Number of students in college(after quarantine):
-                    <input type="text" name ="nonq"/>
+                    <input type="number" name ="nonq"/>
                   </p>
                   <p>Number of vacant quarantine rooms:
-                    <input type="text" name ="room"/>
+                    <input type="number" name ="room"/>
                   </p>
                   <p>Number of days of quarantine:
-                    <input type="text" name ="qt"/>
+                    <input type="number" name ="qt"/>
                   </p>
+
                   <button type="submit" class="btn btn-primary Sumit" >Submit</button>
               </form>
 
