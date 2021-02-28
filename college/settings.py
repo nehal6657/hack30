@@ -26,7 +26,7 @@ SECRET_KEY = 'l@6^x@ghh+6^82c&&c11bj)3(ciwyj@abpal3891fb3u+p(r_^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost','0.0.0']
 
 
 # Application definition
@@ -76,8 +76,11 @@ WSGI_APPLICATION = 'college.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'covid19',
+        'USER': 'nehal',
+        'PASSWORD': 'nehal123',
+        'HOST':'localhost'
     }
 }
 
