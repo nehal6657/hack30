@@ -1,0 +1,14 @@
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+body{
+    margin: auto;
+    padding: auto;
+    background-color: #1d3e53;
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;      
+    
+  /* Full height */
+    
+}
