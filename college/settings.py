@@ -26,7 +26,7 @@ SECRET_KEY = 'l@6^x@ghh+6^82c&&c11bj)3(ciwyj@abpal3891fb3u+p(r_^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','127.0.0.1','https://covid19-task-force.herokuapp.com/']
+ALLOWED_HOSTS = ['localhost','127.0.0.1','covid19-task-force.herokuapp.com']
 
 
 # Application definition
