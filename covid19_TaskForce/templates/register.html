@@ -21,12 +21,13 @@
         
 
         <div class="form">
+          
             <form class="register" action="register" method="POST">
-              
+              {% csrf_token %}
               <input type="text" placeholder="first name" name="first_name"/>
               <input type="text" placeholder="last name" name="last_name"/>
               <input type="text" placeholder="username" name="username"/>
-              <input type="text" placeholder="email address" name="email"/>
+              <input type="email" placeholder="email address" name="email"/>
               <input type="password" placeholder="password" name="password"/>
               <input type="password" placeholder="password2" name="password2"/>
               

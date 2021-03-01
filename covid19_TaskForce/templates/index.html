@@ -31,7 +31,7 @@
             </div>
             <div class="card-body">
               <form action="shedule" method="GET">
-                  
+                  {% csrf_token %}
                   <p>Current number of students (total):
                     <input type="number" name = "total"/>  <!--<button class="autode">Auto-Detect</button>---> 
                   </p>

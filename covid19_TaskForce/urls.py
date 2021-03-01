@@ -4,15 +4,10 @@ from django.conf.urls.static import static
 from . import views
 
 urlpatterns = [
-    path('index', views.index, name="home"),
-<<<<<<< HEAD
+    path('index', views.index, name="index"),
     path('shedule', views.output, name='shedule'),
-    
-    
-]
-=======
-    path('shedule',views.output, name='shedule'),
     path('register', views.register, name='register'),
-    path('login', views.index, name='login'),
+    path('login', views.login, name='login'),
+    path('student',views.student,name='student')
+    
 ]
->>>>>>> eac7e668bda762ef93b5c2e650983a5f05b99547

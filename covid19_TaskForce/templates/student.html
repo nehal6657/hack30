@@ -1,0 +1,34 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{%static './style.css' %}">
+    <title>Covid19 - Task Force</title>
+</head>
+
+<body>
+    <div class="main-site">
+        <div class="navigation">
+            <nav class="main-nav sticky-top">
+                <p id="Signout1"><b><u><a href="login"> Sign Out</a></b></u></p>
+                <a href="#">
+                <img src="{% static 'logo.png'%}" width="30" height="30" class="d-inline-block align-top logo" alt="" />
+                <p id="title1">covid19_taskforce</p>
+                </a>
+                
+            </nav>
+        {% for dest in dests %}
+        {% csrf_token %}
+        </div>
+
+        <p>
+            total number of people = {{dest.Total}}</p>
+        </div>
+        {% endfor %}
+    </div>
+ </body>
