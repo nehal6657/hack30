@@ -15,19 +15,39 @@
     <div class="main-site">
         <div class="navigation">
             <nav class="main-nav sticky-top">
-                <p id="Signout1"><b><u><a href="login"> Sign Out</a></b></u></p>
+                
                 <a href="#">
                 <img src="{% static 'logo.png'%}" width="30" height="30" class="d-inline-block align-top logo" alt="" />
                 <p id="title1">covid19_taskforce</p>
                 </a>
                 
             </nav>
+            <p id="Signout1"><b><u><a href="login"> Sign Out</a></b></u></p>
         {% for dest in dests %}
         {% csrf_token %}
         </div>
 
-        <p>
-            total number of people = {{dest.Total}}</p>
+        
+            <div class="card text-center main-card">
+                <h2><b>Welcome {{user.first_name}} !</b></h2>
+                <div class="card-header">
+                    <h2 id="titlee">Available slots for you are :</h2>
+                </div>
+                <div class="card-body">
+                  <form action="index" method="GET">
+                      {% csrf_token %}
+                      <p>
+                        total number of people = {{dest.Total}}
+                    </p>
+                      
+    
+                      <button type="submit" class="btn btn-primary Sumit" >Exit</button>
+                  </form>
+    
+    
+                  
+                </div>
+              </div>
         </div>
         {% endfor %}
     </div>
