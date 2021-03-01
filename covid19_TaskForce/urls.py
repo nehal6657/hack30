@@ -7,6 +7,6 @@ urlpatterns = [
     
     path('index', views.index, name="home"),
     path('shedule', views.output, name='shedule'),
-    path('register', views.register, name='register'),
-    path('login', views.index, name='login'),
+    
+    
 ]
