@@ -1,7 +1,5 @@
 from django.shortcuts import render
-<<<<<<< HEAD
 from .models import destination
-=======
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User, auth
@@ -9,10 +7,18 @@ from django.contrib import messages
 import pandas as pd
 
 
->>>>>>> eac7e668bda762ef93b5c2e650983a5f05b99547
 # Create your views here.
 def index(request):    
     return render(request, 'index.html')
+def student(request):
+    dests=destination.objects.all()
+    # al = (request.GET['total'])
+    # startdate = (request.GET['startdate'])
+    # noofquarantine = (request.GET['noofquarantine'])
+    # nonq = (request.GET['nonq'])
+    # room = (request.GET['room'])
+    # qt = (request.GET['qt'])
+    return render(request, 'student.html',{'dests':dests})
 
 def output(request):
     total = (request.GET['total'])
@@ -34,7 +40,10 @@ def login(request):
 
         if user is not None:
             auth.login(request, user)
-            return redirect('/')
+            if user.is_superuser :
+                return redirect('/index')
+            else:
+                return redirect('/student')
         else:
             messages.info(request,"invalid credentials!")    
             return redirect('login')
@@ -53,7 +62,7 @@ def register(request):
         password = request.POST['password']
         password2 = request.POST['password2']
         username= request.POST['username']
-        
+         
         if password==password2:
             if User.objects.filter(username=username).exists():
                 print("username taken")

@@ -26,7 +26,7 @@ SECRET_KEY = 'l@6^x@ghh+6^82c&&c11bj)3(ciwyj@abpal3891fb3u+p(r_^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['localhost','127.0.0.1']
 
 
 # Application definition
@@ -78,17 +78,11 @@ WSGI_APPLICATION = 'college.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-<<<<<<< HEAD
         'NAME': 'hack',
         'USER': 'postgres',
         'PASSWORD': 'shubhanshu0608',
         'HOST': 'localhost'
-=======
-        'NAME': 'covid19',
-        'USER': 'nehal',
-        'PASSWORD': 'nehal123',
-        'HOST':'localhost'
->>>>>>> eac7e668bda762ef93b5c2e650983a5f05b99547
+        
     }
 }
 
