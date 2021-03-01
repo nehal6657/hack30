@@ -26,7 +26,7 @@ SECRET_KEY = 'l@6^x@ghh+6^82c&&c11bj)3(ciwyj@abpal3891fb3u+p(r_^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','127.0.0.1','covid19-task-force.herokuapp.com']
+ALLOWED_HOSTS = ['localhost','127.0.0.1','covid19-task-force.herokuapp.com','0.0.0.0']
 
 
 # Application definition
@@ -79,13 +79,15 @@ WSGI_APPLICATION = 'college.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'covid19',
-        'USER': 'nehal',
-        'PASSWORD': 'nehal123',
-        'HOST': 'localhost'
+        'NAME': 'db7tevfhn4qqgv',
+        'USER': 'xnzbnxhualotbx',
+        'PASSWORD': '40776ac0758fb6eef6daabb3052970f037529984da50cae98a53da8eeef10d4c',
+        'HOST': 'ec2-50-16-108-41.compute-1.amazonaws.com',
+        'PORT': 5432,
         
     }
 }
+# postgres://xnzbnxhualotbx:40776ac0758fb6eef6daabb3052970f037529984da50cae98a53da8eeef10d4c@ec2-50-16-108-41.compute-1.amazonaws.com:5432/db7tevfhn4qqgv
 
 
 # Password validation
