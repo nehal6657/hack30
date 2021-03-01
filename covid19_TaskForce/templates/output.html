@@ -7,6 +7,25 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static './style.css'%}">
     <title>Document</title>
+
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td,
+    th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
 </head>
 <body>
 
@@ -14,31 +33,38 @@
         <div class="navigation">
             <nav class="main-nav sticky-top">
                 <a href="#">
-                  <img src="{% static 'logo.png'%}" width="30" height="30" class="d-inline-block align-top logo" alt="""><p id = "title1">FASAL</p></img>
+                  <img src="{% static 'logo.png'%}" width="30" height="30" class="d-inline-block align-top logo" alt="""><p id = "title1">covid19_TaskForce</p></img>
                 </a>
                 <p id="Signout1"><u><a href="login"> Sign Out</a></u></p>
               </nav>
         </div>
+        </div>
+        
+        
         <div class="card text-center main-card">
+            <h2><b>Welcome {{user.first_name}} !</b></h2>
             <div class="card-header">
-                <h2 id="titlee">Recommended scheduling is:</h2>
+                <h2 id="titlee">Date for reaching campus is :) {{end}}</h2>
             </div>
-            <div class="card-body">
-                <ul class = "listt center">
-                    {%for crop, price in info%}
-                    <li class="list-items"><h4>{{crop}}</h4>
-                        <div class="d-flex align-content-center flex-wrap"><p>Price: {{price}} </p></div>
-                       
-                    </li>
-                    {%endfor%}
-                    
-                </ul>
-                <h2 id="titlee">Date for reaching camous is :) {{dests.end}}</h2>
-
-
-              <form action="index"><button class="btn btn-primary Sumit" type="submit">Enter other data</button></form>
-            </div>
-          </div>
+            <table>
+                <tr>
+                    <th>Slots</th>
+                    <th>Remaining_Students</th>
+                    <th>Date</th>
+                </tr>
+                {% for i in zipped_list %}
+                <tr>
+                    <td>{{i.2}}</td>
+                    <td>{{i.1}}</td>
+                    <td>{{i.0}}</td>
+                </tr>
+                {% endfor %}
+        
+            </table>
+        
+        
+        </div>
+        
 
     </div>
 </body>
