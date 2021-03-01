@@ -12,38 +12,28 @@ from datetime import timedelta, date, datetime
 def index(request):    
     return render(request, 'index.html')
 def student(request):
-    dests=code.simple()
+    zipped_list,end = code.simple()
+    context_dic = {'zipped_list': zipped_list,'end':end}
     
-    lis=['slots','rem','date']
+    
+    
 
     # print(total,startdate,noofquarantine,nonq)
     # for dest in dests:
     #     Total =  dest.Total
-    #     my_date = dest.start
-    #     noofquarantine = dest.num_quarantine
-    #     nonq = dest.num_free
-    #     Total_rooms = dest.room
-    #     Quarantine_days = (request.GET['qt'])
-    #     num_days=(Total-noofquarantine-nonq)//Total_rooms
-    #     remaining=Total%Total_rooms
-    #     if (remaining!=0):
-    #         num_days+=1
-    #     total_days = Quarantine_days * num_days
-        
-    #     end_date = my_date + timedelta(days=total_days)
-    #     list.append(end_date)
-    # al = (request.GET['total'])
-    # startdate = (request.GET['startdate'])
-    # noofquarantine = (request.GET['noofquarantine'])
-    # nonq = (request.GET['nonq'])
-    # room = (request.GET['room'])
-    # qt = (request.GET['qt'])
-    return render(request, 'student.html',{'dests':dests,'list':lis})
+    
+    return render(request, 'student.html',context_dic)
 
 def output(request):
-    dests = code.simple()
+    zipped_list, end = code.simple()
+    context_dic = {'zipped_list': zipped_list, 'end': end}
 
-    return render(request, 'output.html',{'dest':dest})
+    # print(total,startdate,noofquarantine,nonq)
+    # for dest in dests:
+    #     Total =  dest.Total
+
+    return render(request, 'output.html', context_dic)
+
 
 def login(request):
     if request.method == 'POST':
