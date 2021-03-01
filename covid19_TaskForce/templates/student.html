@@ -9,8 +9,26 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="{%static './style.css' %}">
     <title>Covid19 - Task Force</title>
-</head>
 
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td,
+    th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+</head>
 <body>
     <div class="main-site">
         <div class="navigation">
@@ -23,7 +41,7 @@
                 
             </nav>
             <p id="Signout1"><b><u><a href="login"> Sign Out</a></b></u></p>
-        {% for dest in dests %}
+        }
         {% csrf_token %}
         </div>
 
@@ -31,10 +49,27 @@
             <div class="card text-center main-card">
                 <h2><b>Welcome {{user.first_name}} !</b></h2>
                 <div class="card-header">
-                    <h2 id="titlee">Available slots for you are :</h2>
+                    <h2 id="titlee">Date for reaching camous is :) {{dests.end}}</h2>
                 </div>
+                <table>
+                    <tr>
+                        <th>Slots</th>
+                        <th>Remaining_Students</th>
+                        <th>Quarantine_students</th>
+                    </tr>
+                    {% for dest in dest. %}
+                    <tr>
+                        <td>Alfreds Futterkiste</td>
+                        <td>Maria Anders</td>
+                        <td>Germany</td>
+                    </tr>
+                    {% endfor %}
+                
+                </table>
+                <!-- {% for dest in dests %}
                 <div class="card-body">
-                  <form action="index" method="GET">
+                    
+                  <form action="login" method="GET">
                       {% csrf_token %}
                       <p>
                         total number of people = {{dest.Total}}
@@ -43,12 +78,13 @@
     
                       <button type="submit" class="btn btn-primary Sumit" >Exit</button>
                   </form>
-    
+                    
     
                   
                 </div>
-              </div>
+                {% endfor %} -->
+              </div> 
         </div>
-        {% endfor %}
+        
     </div>
  </body>
