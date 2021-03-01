@@ -5,32 +5,45 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
 import pandas as pd
-
+from covid19_TaskForce import code
+from datetime import timedelta, date, datetime
 
 # Create your views here.
 def index(request):    
     return render(request, 'index.html')
 def student(request):
-    dests=destination.objects.all()
+    dests=code.simple()
+    
+    lis=['slots','rem','date']
+
+    # print(total,startdate,noofquarantine,nonq)
+    # for dest in dests:
+    #     Total =  dest.Total
+    #     my_date = dest.start
+    #     noofquarantine = dest.num_quarantine
+    #     nonq = dest.num_free
+    #     Total_rooms = dest.room
+    #     Quarantine_days = (request.GET['qt'])
+    #     num_days=(Total-noofquarantine-nonq)//Total_rooms
+    #     remaining=Total%Total_rooms
+    #     if (remaining!=0):
+    #         num_days+=1
+    #     total_days = Quarantine_days * num_days
+        
+    #     end_date = my_date + timedelta(days=total_days)
+    #     list.append(end_date)
     # al = (request.GET['total'])
     # startdate = (request.GET['startdate'])
     # noofquarantine = (request.GET['noofquarantine'])
     # nonq = (request.GET['nonq'])
     # room = (request.GET['room'])
     # qt = (request.GET['qt'])
-    return render(request, 'student.html',{'dests':dests})
+    return render(request, 'student.html',{'dests':dests,'list':lis})
 
 def output(request):
-    total = (request.GET['total'])
-    startdate = (request.GET['startdate'])
-    noofquarantine = (request.GET['noofquarantine'])
-    nonq = (request.GET['nonq'])
-    room = (request.GET['room'])
-    qt = (request.GET['qt'])
+    dests = code.simple()
 
-    print(total,startdate,noofquarantine,nonq)
-
-    return render(request, 'output.html')
+    return render(request, 'output.html',{'dest':dest})
 
 def login(request):
     if request.method == 'POST':

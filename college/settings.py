@@ -79,12 +79,13 @@ WSGI_APPLICATION = 'college.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
+
         'NAME': 'db7tevfhn4qqgv',
         'USER': 'xnzbnxhualotbx',
         'PASSWORD': '40776ac0758fb6eef6daabb3052970f037529984da50cae98a53da8eeef10d4c',
         'HOST': 'ec2-50-16-108-41.compute-1.amazonaws.com',
         'PORT': 5432,
-        
+   
     }
 }
 # postgres://xnzbnxhualotbx:40776ac0758fb6eef6daabb3052970f037529984da50cae98a53da8eeef10d4c@ec2-50-16-108-41.compute-1.amazonaws.com:5432/db7tevfhn4qqgv
