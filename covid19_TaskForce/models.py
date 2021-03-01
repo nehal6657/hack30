@@ -1,6 +1,7 @@
 from django.db import models
 
 
+<<<<<<< HEAD
 # Create your models here.
 
 
@@ -14,3 +15,10 @@ class destination(models.Model):
     start = models.DateTimeField()
     
     
+=======
+class Student(models.Model):
+    name: models.CharField(max_length=150)
+    rollno: models.CharField()
+    location: models.CharField()
+
+>>>>>>> eac7e668bda762ef93b5c2e650983a5f05b99547
